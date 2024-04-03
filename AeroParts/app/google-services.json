@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "853830508416",
+    "project_id": "login-register-firebase-c2ee8",
+    "storage_bucket": "login-register-firebase-c2ee8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:853830508416:android:0cdb11c5798f708dd1ab65",
+        "android_client_info": {
+          "package_name": "br.com.fiap.aeroparts"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4TaXYnsaV_kIqjVg5gB49DcbbXc-v6Ho"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
