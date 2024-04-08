@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/nav_home">
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="br.com.fiap.aeroparts.HomeFragment"
+        android:label="Produtos"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment2_to_pedidosFragment3"
+            app:destination="@id/nav_pedido" />
+        <action
+            android:id="@+id/action_homeFragment2_to_aboutFragment2"
+            app:destination="@id/nav_about" />
+        <action
+            android:id="@+id/action_nav_home_to_cotacaoFragment2"
+            app:destination="@id/nav_cotacao" />
+        <action
+            android:id="@+id/action_nav_home_to_loginActivity"
+            app:destination="@id/nav_logout" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_pedido"
+        android:name="br.com.fiap.aeroparts.PedidosFragment"
+        android:label="Seus Pedidos"
+        tools:layout="@layout/fragment_pedidos" >
+        <action
+            android:id="@+id/action_pedidosFragment3_to_homeFragment2"
+            app:destination="@id/nav_home" />
+        <action
+            android:id="@+id/action_pedidosFragment3_to_aboutFragment2"
+            app:destination="@id/nav_about" />
+        <action
+            android:id="@+id/action_nav_pedido_to_cotacaoFragment2"
+            app:destination="@id/nav_cotacao" />
+        <action
+            android:id="@+id/action_nav_pedido_to_loginActivity"
+            app:destination="@id/nav_logout" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_about"
+        android:name="br.com.fiap.aeroparts.AboutFragment"
+        android:label="Sobre Nós"
+        tools:layout="@layout/fragment_about" >
+        <action
+            android:id="@+id/action_aboutFragment2_to_homeFragment2"
+            app:destination="@id/nav_home" />
+        <action
+            android:id="@+id/action_aboutFragment2_to_pedidosFragment3"
+            app:destination="@id/nav_pedido" />
+        <action
+            android:id="@+id/action_nav_about_to_cotacaoFragment2"
+            app:destination="@id/nav_cotacao" />
+        <action
+            android:id="@+id/action_nav_about_to_loginActivity"
+            app:destination="@id/nav_logout" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_cotacao"
+        android:name="br.com.fiap.aeroparts.CotacaoFragment"
+        android:label="Suas Cotações"
+        tools:layout="@layout/fragment_cotacao" >
+        <action
+            android:id="@+id/action_cotacaoFragment2_to_nav_pedido"
+            app:destination="@id/nav_pedido" />
+        <action
+            android:id="@+id/action_cotacaoFragment2_to_nav_home"
+            app:destination="@id/nav_home" />
+        <action
+            android:id="@+id/action_cotacaoFragment2_to_nav_about"
+            app:destination="@id/nav_about" />
+        <action
+            android:id="@+id/action_nav_cotacao_to_loginActivity"
+            app:destination="@id/nav_logout" />
+    </fragment>
+    <activity
+        android:id="@+id/nav_logout"
+        android:name="br.com.fiap.aeroparts.LoginActivity"
+        android:label="activity_login"
+        tools:layout="@layout/activity_login" />
+</navigation>
