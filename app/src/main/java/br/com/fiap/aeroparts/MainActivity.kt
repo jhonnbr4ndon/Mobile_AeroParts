@@ -1,6 +1,8 @@
 package br.com.fiap.aeroparts
 
 import android.os.Bundle
+import android.util.Log
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.findNavController
@@ -30,6 +32,7 @@ class MainActivity : AppCompatActivity() {
 
         appBarConfiguration = AppBarConfiguration(setOf(R.id.nav_home), drawerLayout)
         setupActionBarWithNavController(navController, appBarConfiguration)
+
     }
 
     override fun onSupportNavigateUp(): Boolean {

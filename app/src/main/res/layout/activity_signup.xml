@@ -7,7 +7,8 @@
     android:gravity="center"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SignupActivity">
+    tools:context=".SignupActivity"
+    android:background="@drawable/background">
 
     <TextView
         android:text="@string/cadastre_se"
@@ -28,7 +29,8 @@
             android:id="@+id/signupEmail"
             android:hint="@string/email"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:textStyle="bold"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -42,7 +44,8 @@
             android:hint="@string/password"
             android:inputType="textPassword"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:textStyle="bold"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -60,7 +63,7 @@
         android:gravity="center"
         android:text="Já possui conta? Inicia sessão."
         android:textColor="@color/azul_escuro"
-        android:textSize="15dp"
+        android:textSize="18dp"
         android:layout_marginTop="20dp"
         />
 

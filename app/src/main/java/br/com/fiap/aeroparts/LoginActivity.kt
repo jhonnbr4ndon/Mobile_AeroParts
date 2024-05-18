@@ -32,7 +32,7 @@ class LoginActivity : AppCompatActivity() {
             if (loginUsername.isNotEmpty() && loginPassword.isNotEmpty()){
                 loginUser(loginUsername, loginPassword)
             } else {
-                Toast.makeText(this@LoginActivity, "All fields are mandatory", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@LoginActivity, "Todos os campos são obrigatórios", Toast.LENGTH_SHORT).show()
             }
         }
 
@@ -50,17 +50,17 @@ class LoginActivity : AppCompatActivity() {
                         val userData = userSnapshot.getValue(UserData::class.java)
 
                         if (userData != null && userData.password == password){
-                            Toast.makeText(this@LoginActivity, "Login Successful", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(this@LoginActivity, "Login bem-sucedido", Toast.LENGTH_SHORT).show()
                             startActivity(Intent(this@LoginActivity, MainActivity::class.java))
                             finish()
                         }
                     }
                 }
-                Toast.makeText(this@LoginActivity, "Login Failed", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@LoginActivity, "E-mail ou senha inválida", Toast.LENGTH_SHORT).show()
             }
 
             override fun onCancelled(databaseError: DatabaseError) {
-                Toast.makeText(this@LoginActivity, "Database Error: ${databaseError.message}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@LoginActivity, "Erro de banco de dados: ${databaseError.message}", Toast.LENGTH_SHORT).show()
             }
         })
     }

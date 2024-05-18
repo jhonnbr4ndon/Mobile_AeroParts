@@ -9,7 +9,7 @@
         android:name="br.com.fiap.aeroparts.HomeFragment"
         android:label="Produtos"
         tools:layout="@layout/fragment_home" >
-        <action
+        <actionm
             android:id="@+id/action_homeFragment2_to_pedidosFragment3"
             app:destination="@id/nav_pedido" />
         <action
@@ -21,6 +21,15 @@
         <action
             android:id="@+id/action_nav_home_to_loginActivity"
             app:destination="@id/nav_logout" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_read2"
+            app:destination="@id/nav_read" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_update"
+            app:destination="@id/nav_update" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_delete"
+            app:destination="@id/nav_delete" />
     </fragment>
     <fragment
         android:id="@+id/nav_pedido"
@@ -39,6 +48,15 @@
         <action
             android:id="@+id/action_nav_pedido_to_loginActivity"
             app:destination="@id/nav_logout" />
+        <action
+            android:id="@+id/action_nav_pedido_to_nav_read"
+            app:destination="@id/nav_read" />
+        <action
+            android:id="@+id/action_nav_pedido_to_nav_update"
+            app:destination="@id/nav_update" />
+        <action
+            android:id="@+id/action_nav_pedido_to_nav_delete"
+            app:destination="@id/nav_delete" />
     </fragment>
     <fragment
         android:id="@+id/nav_about"
@@ -57,6 +75,15 @@
         <action
             android:id="@+id/action_nav_about_to_loginActivity"
             app:destination="@id/nav_logout" />
+        <action
+            android:id="@+id/action_nav_about_to_nav_read"
+            app:destination="@id/nav_read" />
+        <action
+            android:id="@+id/action_nav_about_to_nav_update"
+            app:destination="@id/nav_update" />
+        <action
+            android:id="@+id/action_nav_about_to_nav_delete"
+            app:destination="@id/nav_delete" />
     </fragment>
     <fragment
         android:id="@+id/nav_cotacao"
@@ -75,10 +102,106 @@
         <action
             android:id="@+id/action_nav_cotacao_to_loginActivity"
             app:destination="@id/nav_logout" />
+        <action
+            android:id="@+id/action_nav_cotacao_to_nav_read"
+            app:destination="@id/nav_read" />
+        <action
+            android:id="@+id/action_nav_cotacao_to_nav_update"
+            app:destination="@id/nav_update" />
+        <action
+            android:id="@+id/action_nav_cotacao_to_nav_delete"
+            app:destination="@id/nav_delete" />
     </fragment>
+    <fragment
+        android:id="@+id/nav_read"
+        android:name="br.com.fiap.aeroparts.ReadFragment"
+        android:label="fragment_read"
+        tools:layout="@layout/fragment_read">
+        <action
+            android:id="@+id/action_nav_read_to_nav_cotacao"
+            app:destination="@id/nav_cotacao" />
+        <action
+            android:id="@+id/action_nav_read_to_nav_pedido"
+            app:destination="@id/nav_pedido" />
+        <action
+            android:id="@+id/action_nav_read_to_nav_logout"
+            app:destination="@id/nav_logout" />
+        <action
+            android:id="@+id/action_nav_read_to_nav_home"
+            app:destination="@id/nav_home" />
+        <action
+            android:id="@+id/action_nav_read_to_nav_about"
+            app:destination="@id/nav_about" />
+        <action
+            android:id="@+id/action_nav_read_to_nav_update"
+            app:destination="@id/nav_update" />
+        <action
+            android:id="@+id/action_nav_read_to_nav_delete"
+            app:destination="@id/nav_delete" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_update"
+        android:name="br.com.fiap.aeroparts.UpdateFragments"
+        android:label="fragment_update"
+        tools:layout="@layout/fragment_update">
+        <action
+            android:id="@+id/action_nav_update_to_nav_read"
+            app:destination="@id/nav_read" />
+        <action
+            android:id="@+id/action_nav_update_to_nav_cotacao"
+            app:destination="@id/nav_cotacao" />
+        <action
+            android:id="@+id/action_nav_update_to_nav_pedido"
+            app:destination="@id/nav_pedido" />
+        <action
+            android:id="@+id/action_nav_update_to_nav_home"
+            app:destination="@id/nav_home" />
+        <action
+            android:id="@+id/action_nav_update_to_nav_about"
+            app:destination="@id/nav_about" />
+        <action
+            android:id="@+id/action_nav_update_to_nav_logout"
+            app:destination="@id/nav_logout" />
+        <action
+            android:id="@+id/action_nav_update_to_nav_delete"
+            app:destination="@id/nav_delete" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_delete"
+        android:name="br.com.fiap.aeroparts.DeleteFragment"
+        android:label="fragment_delete"
+        tools:layout="@layout/fragment_delete">
+        <action
+            android:id="@+id/action_deleteFragment_to_nav_read"
+            app:destination="@id/nav_read" />
+        <action
+            android:id="@+id/action_deleteFragment_to_nav_cotacao"
+            app:destination="@id/nav_cotacao" />
+        <action
+            android:id="@+id/action_deleteFragment_to_nav_update"
+            app:destination="@id/nav_update" />
+        <action
+            android:id="@+id/action_deleteFragment_to_nav_logout"
+            app:destination="@id/nav_logout" />
+        <action
+            android:id="@+id/action_deleteFragment_to_nav_pedido"
+            app:destination="@id/nav_pedido" />
+        <action
+            android:id="@+id/action_deleteFragment_to_nav_home"
+            app:destination="@id/nav_home" />
+        <action
+            android:id="@+id/action_deleteFragment_to_nav_about"
+            app:destination="@id/nav_about" />
+    </fragment>
+
     <activity
         android:id="@+id/nav_logout"
         android:name="br.com.fiap.aeroparts.LoginActivity"
         android:label="activity_login"
         tools:layout="@layout/activity_login" />
+
+
+
 </navigation>

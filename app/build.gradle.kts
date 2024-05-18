@@ -4,6 +4,7 @@ plugins {
     id("com.google.gms.google-services")
 }
 
+
 android {
     namespace = "br.com.fiap.aeroparts"
     compileSdk = 34

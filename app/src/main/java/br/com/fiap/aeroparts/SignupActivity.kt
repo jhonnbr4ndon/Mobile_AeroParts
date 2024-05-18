@@ -1,9 +1,9 @@
 package br.com.fiap.aeroparts
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import br.com.fiap.aeroparts.databinding.ActivitySignupBinding
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -14,7 +14,7 @@ import com.google.firebase.database.ValueEventListener
 class SignupActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivitySignupBinding
-    private lateinit var firebaseDatabase : FirebaseDatabase
+    private lateinit var firebaseDatabase: FirebaseDatabase
     private lateinit var databaseReference: DatabaseReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,10 +29,10 @@ class SignupActivity : AppCompatActivity() {
             val signupUsername = binding.signupEmail.text.toString()
             val signupPassword = binding.signupPassword.text.toString()
 
-            if (signupUsername.isNotEmpty() && signupPassword.isNotEmpty()){
+            if (isEmailValid(signupUsername) && isPasswordValid(signupPassword)) {
                 signupUser(signupUsername, signupPassword)
             } else {
-                Toast.makeText(this@SignupActivity, "All fields are mandatory", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@SignupActivity, "E-mail ou senha inválida", Toast.LENGTH_SHORT).show()
             }
         }
 
@@ -43,6 +43,15 @@ class SignupActivity : AppCompatActivity() {
 
     }
 
+    private fun isEmailValid(email: String): Boolean {
+        val emailRegex = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$"
+        return email.matches(emailRegex.toRegex())
+    }
+
+    private fun isPasswordValid(password: String): Boolean {
+        return password.length >= 8
+    }
+
     private fun signupUser(username: String, password: String) {
         databaseReference.orderByChild("username").equalTo(username).addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
@@ -50,16 +59,16 @@ class SignupActivity : AppCompatActivity() {
                     val id = databaseReference.push().key
                     val userData = UserData(id, username, password)
                     databaseReference.child(id!!).setValue(userData)
-                    Toast.makeText(this@SignupActivity, "Signup Successful", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@SignupActivity, "Cadastro bem sucedido", Toast.LENGTH_SHORT).show()
                     startActivity(Intent(this@SignupActivity, LoginActivity::class.java))
                     finish()
                 } else {
-                    Toast.makeText(this@SignupActivity, "User already exists", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@SignupActivity, "Usuário já existe", Toast.LENGTH_SHORT).show()
                 }
             }
 
             override fun onCancelled(databaseError: DatabaseError) {
-                Toast.makeText(this@SignupActivity, "Database Error: ${databaseError.message}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@SignupActivity, "Erro de banco de dados: ${databaseError.message}", Toast.LENGTH_SHORT).show()
             }
 
         })
